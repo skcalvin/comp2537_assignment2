@@ -1,0 +1,15 @@
+<%- include("templates/header") %>
+<div>Users:</div>
+<ul>
+    <% let i=0; %>
+    <% for(i=0; i < users.length; i++) { %>
+    <%- include('templates/user', {user: users[i]})  %> 
+    <div class="d-flex gap-2">
+        <form action="/updateUserType/<%= users[i].name %>" method="post">
+            <button class="btn btn-primary rounded-pill px-3" type="submit" name="userType" value="admin">Make Admin</button>
+            <button class="btn btn-secondary rounded-pill px-3" type="submit" name="userType" value="user">Make User</button>
+        </form>
+    </div>
+    <% } %> 
+</ul>
+<%- include("templates/footer") %>

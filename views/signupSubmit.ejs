@@ -1,0 +1,8 @@
+<%- include("templates/header") %>
+<% if(!name || !email || !password){ %>
+    Missing Information
+    <form action="/signup" method="post">
+        <button type="submit" class="btn btn-outline-secondary">Try Again</button>
+    </form>
+<% } %>
+<%- include("templates/footer") %>
